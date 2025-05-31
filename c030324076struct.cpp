@@ -12,16 +12,17 @@ struct mahasiswa
 
 int main () {
     mahasiswa meisya;
+    mahasiswa* namaku = &meisya;
 
-    meisya.nim = "C030324076";
-    meisya.nama = "Meisya Andaryani";
-    meisya.alamat = "Jl.Padat karya No.22";
-    meisya.ipk = 4;
+    namaku->nim = "C030324076";
+    namaku->nama = "Meisya Andaryani";
+    namaku->alamat = "Jl.Padat karya No.22";
+    namaku->ipk = 4;
 
-    cout << meisya.nim<<"\n";
-    cout << meisya.nama<<"\n";
-    cout << meisya.alamat<<"\n";
-    cout << meisya.ipk<<"\n";
+    cout << namaku->nim << endl;
+    cout << namaku->nama << endl;
+    cout << namaku->alamat << endl;
+    cout << namaku->ipk << endl;
 
     return 0;
 }
