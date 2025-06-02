@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <limits> //untuk cin.ignore()
 using namespace std;
 
 // deklarasi
@@ -27,6 +29,7 @@ int empty (stack *S){
     return (S -> count == 0);
 }
 
+// fungsi pop
 void pop (stack *S, itemType *x){
     if (S -> count == 0)
     {
@@ -64,6 +67,10 @@ void printStack(stack *S) {
     for (int i = S->count - 1; i >= 0; i--) {
         cout << S->Item[i] << endl;
     }
+
+    cout << "tekan enter untuk kembali ke menu utama";
+    cin.ignore(numeric_limits<streamsize>::max(),'\n');
+    cin.get();
 }
 
 int main() {
@@ -107,6 +114,7 @@ int main() {
             break;
 
         case 3:
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
             printStack(&S);
             break;
 
@@ -120,7 +128,7 @@ int main() {
         }
 
     }
-    while (pilihan !=3);
+    while (pilihan !=4);
     
 
     return 0;
