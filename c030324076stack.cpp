@@ -39,6 +39,16 @@ void pop (stack *S, itemType *x){
     }
 }
 
+void push(stack *S, itemType x) {
+    if (full(S)) {
+        cout << "Stack penuh\n";
+    } else {
+        S->Item[S->count] = x;
+        S->count++;
+    }
+}
+
+
 // menambahkan PrintStack
 void printStack(stack *S) {
     if (empty(S)) {
