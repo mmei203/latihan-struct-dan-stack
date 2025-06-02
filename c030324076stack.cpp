@@ -37,6 +37,22 @@ void pop (stack *S, itemType *x){
         --(S -> count);
         *x = S->Item[S->count];
     }
-    
-    
+}
+
+// menambahkan PrintStack
+void printStack(stack *S) {
+    if (empty(S)) {
+        cout << "Stack kosong\n";
+        return;
+    }
+
+    cout << "Isi stack (dari atas ke bawah):\n";
+    for (int i = S->count - 1; i >= 0; i--) {
+        cout << S->Item[i] << endl;
+    }
+}
+
+
+int main (){
+    return 0;
 }
