@@ -77,7 +77,8 @@ int main() {
         cout << "\n Menu Stack \n";
         cout << "\t 1. Push (menambahkan nilai stack)\n" ;
         cout << "\t 2. Pop (menghapus nilai stack)\n" ;
-        cout << "\t 3. Keluar\n" ;
+        cout << "\t 3. Tampilkan stack\n" ;
+        cout << "\t 4. Keluar\n" ;
         cout << "pilih menu : " ;
 
         cin >> pilihan;
@@ -95,6 +96,10 @@ int main() {
             break;
 
         case 3:
+            printStack(&S);
+            break;
+
+        case 4:
             cout << "keluar dari program";
             break;
 
