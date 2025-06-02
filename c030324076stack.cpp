@@ -30,12 +30,13 @@ int empty (stack *S){
 void pop (stack *S, itemType *x){
     if (S -> count == 0)
     {
-        cout << "stack kosong";
+        cout << "stack kosong\n";
     }
     else
     {
         --(S -> count);
         *x = S->Item[S->count];
+        cout << "elemen" << *x << "berhasil dihapus dari stack";
     }
 }
 
@@ -75,21 +76,27 @@ int main() {
     do {
         cout << "\n Menu Stack \n";
         cout << "\t 1. Push (menambahkan nilai stack)\n" ;
-        cout << "\t 2. Keluar\n" ;
-        cout << "pilih menu:" ;
+        cout << "\t 2. Pop (menghapus nilai stack)\n" ;
+        cout << "\t 3. Keluar\n" ;
+        cout << "pilih menu : " ;
 
         cin >> pilihan;
 
         switch (pilihan)
         {
         case 1:
-            cout << "Masukkan Nilai :";
+            cout << "Masukkan Nilai : ";
             cin >> nilai;
             push(&S, nilai);
             break;
 
         case 2:
+            pop(&S, &nilai);
+            break;
+
+        case 3:
             cout << "keluar dari program";
+            break;
 
         default:
             cout << "Pilihan tidak ada.";
@@ -97,7 +104,7 @@ int main() {
         }
 
     }
-    while (pilihan !=2);
+    while (pilihan !=3);
     
 
     return 0;
