@@ -39,12 +39,15 @@ void pop (stack *S, itemType *x){
     }
 }
 
+// fungsi push
 void push(stack *S, itemType x) {
     if (full(S)) {
         cout << "Stack penuh\n";
     } else {
         S->Item[S->count] = x;
         S->count++;
+        // penambahan cout
+        cout << "Elemen " << x << " berhasil ditambahkan ke stack.\n";
     }
 }
 
@@ -66,11 +69,36 @@ int main() {
     stack S;
     Initialize(&S);
 
-    push(&S, 10);
-    push(&S, 20);
-    push(&S, 30);
+    int pilihan;
+    itemType nilai;
 
-    printStack(&S);
+    do {
+        cout << "\n Menu Stack \n";
+        cout << "\t 1. Push (menambahkan nilai stack)\n" ;
+        cout << "\t 2. Keluar\n" ;
+        cout << "pilih menu:" ;
+
+        cin >> pilihan;
+
+        switch (pilihan)
+        {
+        case 1:
+            cout << "Masukkan Nilai :";
+            cin >> nilai;
+            push(&S, nilai);
+            break;
+
+        case 2:
+            cout << "keluar dari program";
+
+        default:
+            cout << "Pilihan tidak ada.";
+            break;
+        }
+
+    }
+    while (pilihan !=2);
+    
 
     return 0;
 }
