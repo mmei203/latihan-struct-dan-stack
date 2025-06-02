@@ -62,7 +62,15 @@ void printStack(stack *S) {
     }
 }
 
+int main() {
+    stack S;
+    Initialize(&S);
 
-int main (){
+    push(&S, 10);
+    push(&S, 20);
+    push(&S, 30);
+
+    printStack(&S);
+
     return 0;
 }
