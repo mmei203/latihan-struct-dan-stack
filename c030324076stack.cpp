@@ -83,13 +83,24 @@ int main() {
 
         cin >> pilihan;
 
-        switch (pilihan)
-        {
-        case 1:
-            cout << "Masukkan Nilai : ";
-            cin >> nilai;
-            push(&S, nilai);
-            break;
+        switch (pilihan) {
+        case 1:{
+        string input;
+        while (true) {
+            cout << "Masukkan Nilai (Q untuk keluar dari push) : ";
+            cin >> input;
+            if (input == "Q" || input == "q" ) break;
+            try {
+                nilai = stoi(input);
+                push(&S, nilai);
+            }
+            catch(...){
+                cout << "input tidak valid. gunakan Q atau q untuk keluar.";
+            }
+            
+            }
+        }
+        break;
 
         case 2:
             pop(&S, &nilai);
